@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Calendar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="static/app.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+        }
+        .calendar-day {
+            background-color: #ffffff;
+            min-height: 100px;
+            padding: 8px;
+            position: relative;
+        }
+        .calendar-day-header {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.25;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 4px 0;
+            color: #000000;
+        }
+        .calendar-day-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 10px;
+            color: #000000;
+        }
+        .calendar-day.current .calendar-day-number {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            line-height: 1;
+            border-radius: 50%;
+        }
+        .calendar-event {
+            font-size: 8px;
+            color: #000000;
+            line-height: 1.25;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        .calendar-event.bg1 { background-color: #FEE6C9; }
+        .calendar-event.bg2 { background-color: #FFD9D9; }
+        .calendar-event.bg3 { background-color: #D2F0FF; }
+        .calendar-event.bg4 { background-color: #EBEFF0; }
+        .calendar-title {
+            font-size: 28px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: #000000;
+        }
+        .calendar-title .year {
+            font-weight: 300;
+        }
+        .month-navigation {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-size: 28px;
+            color: #000000;
+        }
+        .month-navigation button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="container mx-auto p-4">
+        <div class="mb-4">
+            <label for="user" class="block text-gray-700">Student ID:</label>
+            <input type="text" id="user" class="border border-gray-300 p-2 w-full">
+        </div>
+        <div class="mb-4">
+            <label for="pass" class="block text-gray-700">Password:</label>
+            <input type="password" id="pass" class="border border-gray-300 p-2 w-full">
+        </div>
+        <button onclick="getTimetable()" class="bg-blue-500 text-white py-2 px-4 rounded">Get Timetable</button>
+        <button id="downloadButton" style="display:none;" class="bg-green-500 text-white py-2 px-4 rounded mt-4">Download Calendar</button>
+        <div id="calendar-container" class="mt-4 bg-white shadow-md rounded p-4">
+            <div id="calendar-title" class="calendar-title mb-4"></div>
+            <div class="month-navigation">
+                <button onclick="prevMonth()">&lt;</button>
+                <button onclick="nextMonth()">&gt;</button>
+            </div>
+            <div id="calendar"></div>
+        </div>
+    </div>
+</body>
+</html>
