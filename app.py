@@ -7,9 +7,9 @@ app = Flask(__name__, static_url_path='/static')
 def index():
     return render_template('index.html')
 
-@app.route('/signin')
+@app.route('/login')
 def signin():
-    return render_template('signin.html')
+    return render_template('login.html')
 
 @app.route('/app')
 def app_page():
