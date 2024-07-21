@@ -126,7 +126,7 @@
 			Curtin Timetable
 		</div>
 		<div>
-			<a class="text-white mr-4" href="#">Home</a> <a class="text-white mr-8" href="#">Calendar</a>
+			<a class="text-white mr-4" href="#">Home</a> <a class="text-white mr-4" href="#">Calendar</a> <a class="text-white mr-8" href="/" onclick="logout()">Logout</a>
 		</div>
 	</nav><!-- Header Section -->
 	<div class="header-section flex items-center px-4 md:px-8">
@@ -150,12 +150,7 @@
 		</div>
 	</div><!-- Article Section -->
 	<div class="bg-white py-8 px-4 md:px-8 overlap shadow-md">
-		<div class="mb-4">
-			<label class="block text-gray-700" for="user">Student ID:</label> <input class="border border-gray-300 p-2 w-full" id="user" type="text">
-		</div>
-		<div class="mb-4">
-			<label class="block text-gray-700" for="pass">Password:</label> <input class="border border-gray-300 p-2 w-full" id="pass" type="password">
-		</div><button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button>
+		<button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button>
 		<div class="bg-white" id="calendar-container">
 			<div class="calendar-title mb-4" id="calendar-title"></div>
 			<div class="month-navigation">
