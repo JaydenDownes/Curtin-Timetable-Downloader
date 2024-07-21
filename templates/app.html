@@ -12,8 +12,10 @@
 	</script>
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.js">
 	</script>
-	<script src="https://cdn.tailwindcss.com">
-	</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="static/favicons/site.webmanifest">
 	<style>
 	       body {
 	           font-family: 'Inter', sans-serif;
@@ -133,7 +135,7 @@
 		<div class="text-header max-w-2xl text-center">
 			<h1 class="text-4xl font-bold mb-4">University Calendar</h1><!-- <p class="text-lg">This is the subtext of the article that provides a brief introduction or summary.</p> -->
 			<div class="flex justify-center space-x-4 mb-24">
-				<button class="bg-white text-gray-900 px-4 py-2 rounded">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to.. <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+				<button id="downloadButton"  onclick="downloadCalendar()" class="bg-white text-gray-900 px-4 py-2 rounded">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to..  <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
 				<path d="m1 1 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button> <!-- Dropdown menu -->
 				<div class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700" id="dropdownHover">
 					<ul aria-labelledby="dropdownHoverButton" class="py-2 text-sm text-gray-700 dark:text-gray-200">
@@ -150,7 +152,7 @@
 		</div>
 	</div><!-- Article Section -->
 	<div class="bg-white py-8 px-4 md:px-8 overlap shadow-md">
-		<button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button>
+		<!-- <button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button> -->
 		<div class="bg-white" id="calendar-container">
 			<div class="calendar-title mb-4" id="calendar-title"></div>
 			<div class="month-navigation">
