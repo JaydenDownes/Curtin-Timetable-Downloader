@@ -8,6 +8,12 @@
 <br/>
 
 Welcome to the **unofficial** Curtin University Timetable Fetcher! This web application allows users to fetch their timetables from Curtin University's Elsie Service and seamlessly integrate them into their favorite calendar applications such as Google Calendar, Outlook, Apple Calendar, iOS, and Android.
+
+<br>
+
+> [!IMPORTANT]
+> This software is currently under active development and may contain bugs or other issues. It is provided without warranty of any kind. By using this software, you acknowledge and accept that your use is at your own risk, and the developers are not liable for any damages or consequences arising from its use.
+
 <br>
 
 ### Features
