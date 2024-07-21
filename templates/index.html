@@ -3,22 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable Calendar</title>
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
-    <script defer src="static/app.js"></script>
+    <title>Download Curtin University Timetables and Export to Calendar Apps - Curtin University Timetable Downloader</title>
+    <meta name="description" content="Download Curtin University timetables and export them seamlessly to Google Calendar, Outlook, Apple Calendar, and Android Calendar with ease.">
+    <meta name="keywords" content="Curtin University timetables, export to calendar apps, Google Calendar, Outlook, Apple Calendar, Android Calendar">
+    <meta property="og:title" content="Download Curtin University Timetables and Export to Calendar Apps - Curtin University Timetable Downloader">
+    <meta property="og:description" content="Download Curtin University timetables and export them seamlessly to Google Calendar, Outlook, Apple Calendar, and Android Calendar with ease.">
+    <meta property="og:url" content="https://www.yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.yourwebsite.com/og-image.jpg">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="static/favicons/site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(39, 39, 42);
+            font-family: 'Inter', sans-serif;
+            color: white;
+        }
+        .fixed-bottom-center {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .one-third-from-top {
+            margin-top: calc(100vh / 3);
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <label for="user">Student ID:</label>
-        <input type="text" id="user">
+    <nav class="flex items-center justify-between p-12">
+        <div class="text-white font-bold text-xl">Curtin Timetable</div>
+        <div>
+            <a href="#" class="text-white mr-4">Home</a>
+            <a href="login" class="text-white">Calendar</a>
+        </div>
+    </nav>
+    <div class="flex flex-col items-center justify-center text-center w-full one-third-from-top">
+        <h1 class="text-4xl font-bold mb-4 ml-8 mr-8">Download your Curtin timetable</h1>
+        <p class="mb-8 ml-8 mr-8">Effortlessly view and download your Curtin University schedule or export it to your favorite calendar application.</p>
+        <div class="flex space-x-4 ml-8 mr-8 mb-24">
+            <a class="bg-white text-gray-900 px-4 py-2 rounded" href="login">Generate Calendar</a>
+            <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.97 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.09-1.87 3.77-3.65 3.97.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.45.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Star On GitHub
+            </button>
+        </div>
     </div>
-    <div>
-        <label for="pass">Password:</label>
-        <input type="password" id="pass">
-    </div>
-    <button onclick="getTimetable()">Get Timetable</button>
-    <button id="downloadButton" style="display:none;">Download Calendar</button>
-    <div id="calendar"></div>
+    <img src="http://localhost:5000/assets/images/hero/hero-image.jpg" alt="Fixed Image" class="fixed-bottom-center" width="35%">
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Curtin University Timetable Downloader</title>
+    <meta name="description" content="Login to access your Curtin University timetables and seamlessly export them to Google Calendar, Outlook, Apple Calendar, and Android Calendar.">
+    <meta name="keywords" content="login, Curtin University timetables, export to calendar apps">
+    <meta property="og:title" content="Login - Curtin University Timetable Downloader">
+    <meta property="og:description" content="Login to access your Curtin University timetables and seamlessly export them to Google Calendar, Outlook, Apple Calendar, and Android Calendar.">
+    <meta property="og:url" content="https://www.yourwebsite.com/login">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com/login">
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
+    <link rel="manifest" href="static/favicons/site.webmanifest">
+    <style>
+        body {
+            background-color: rgb(39, 39, 42);
+            font-family: 'Inter', sans-serif;
+            color: white;
+        }
+        .fixed-bottom-center {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .one-third-from-top {
+            margin-top: calc((100vh - 124px - 536px)/ 2);
+        }
+    </style>
+</head>
+<body onload="loadCredentials()">
+    <nav class="flex items-center justify-between p-12">
+        <div class="text-white font-bold text-xl">Curtin Timetable</div>
+        <div>
+            <a href="#" class="text-white mr-4">Home</a>
+            <a href="#" class="text-white">Calendar</a>
+        </div>
+    </nav>
+    <div class="flex flex-col items-center justify-center text-center w-full one-third-from-top">
+                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Sign in to your Curtin account
+                        </h1>
+                        <form class="space-y-4 md:space-y-6" action="#">
+                            <div>
+                                <label for="user" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Student ID</label>
+                                <input type="text" name="user" id="user" autocomplete="username" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="12345678" required="">
+                            </div>
+                            <div>
+                                <label for="pass" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <input type="password" name="password" id="pass" placeholder="••••••••" autocomplete="current-password" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                      <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                      <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                                    </div>
+                                </div>
+                                <!-- <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a> -->
+                            </div>
+                            <p class="text-xs font-light text-gray-500 dark:text-gray-400 pt-4 pb-4">
+                                <a class="font-bold">Please note:</a> This software operates independently of Curtin University. Your login details are used solely to access your timetable from Curtin's Elsie Service through your browser, and none of your information is stored or saved on our servers.
+                            </p>
+                            <button class="w-full text-white bg-gray-900 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" onclick="getTimetable()">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
