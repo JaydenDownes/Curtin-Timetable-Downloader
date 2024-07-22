@@ -122,11 +122,12 @@ function renderCalendar(data) {
 
 function downloadCalendar(user, token) {
     try {
-        const cal = new ics();
-        calendarData.forEach(event => {
-            cal.addEvent(`${event.unit.unitCode} ${event.unit.abbreviatedTitle} ${event.activityType}`, `${event.location.buildingNumber}.${event.location.roomNumber}`, event.startDateTime, event.endDateTime);
-        });
-        cal.download('calendar');
+        const link = document.createElement('a');
+        link.href = `https://curtin-timetable.scsa.workers.dev/?https://elsie.curtin.edu.au/api/calendar.ics?user=${user}&token=${token}`;
+        link.download = 'calendar.ics';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     } catch (error) {
         showToastWithError('An unexpected error occurred while downloading the calendar: ' + error.message);
     }
