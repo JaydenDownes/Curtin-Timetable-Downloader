@@ -6,7 +6,7 @@
 	<title>Article Page</title>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
@@ -157,11 +157,11 @@
 				<path d="m1 1 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
 				<div class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700" id="dropdownHover">
 					<ul aria-labelledby="dropdownHoverButton" class="py-2 text-sm text-gray-700 dark:text-gray-200">
-						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="google-modal" data-modal-toggle="google-modal">Google calendar</button></li>
-						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="outlook-modal" data-modal-toggle="outlook-modal">Outlook</button></li>
-						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="apple-modal" data-modal-toggle="apple-modal">Apple calendar</button></li>
-						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="ios-modal" data-modal-toggle="ios-modal">iOS</button></li>
-						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="android-modal" data-modal-toggle="android-modal">Android</button></li>
+						<li><a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="google-modal" data-modal-toggle="google-modal">Google calendar</a></li>
+						<li><a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="outlook-modal" data-modal-toggle="outlook-modal">Outlook</a></li>
+						<li><a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="apple-modal" data-modal-toggle="apple-modal">Apple calendar</a></li>
+						<li><a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="ios-modal" data-modal-toggle="ios-modal">iOS</a></li>
+						<li><a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="android-modal" data-modal-toggle="android-modal">Android</a></li>
 					</ul>
 				</div>
 			</div>
@@ -189,7 +189,7 @@
 			<div id="calendar"></div>
 		</div>
 	</div><!-- google-modal -->
-	<div class="fixed top-0 left-0 right-0 z-50 hidden w-100 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100vh - 124px)] max-h-full" id="google-modal" tabindex="-1" aria-hidden="true" >
+	<div id="google-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-100 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100vh - 124px)] max-h-full">
 		<div class="relative w-full max-w-lg max-h-full">
 			<!-- Modal content -->
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -329,8 +329,6 @@
             </button>
         </div>
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.js">
-    </script>
     <script>
         // Function to update the navigation bar based on login status
         function updateNavbar() {
