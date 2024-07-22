@@ -20,8 +20,8 @@ async function getTimetable() {
             })
         });
 
-        if (authResponse.status === 415) {
-            showToastWithError('Unsupported Media Type. Make sure your request headers and body are correct.');
+        if (!authResponse.ok) {
+            showToastWithError(`Authentication failed with status ${authResponse.status}`);
             return;
         }
 
@@ -43,6 +43,11 @@ async function getTimetable() {
             }
         });
 
+        if (!timetableResponse.ok) {
+            showToastWithError(`Failed to fetch timetable with status ${timetableResponse.status}`);
+            return;
+        }
+
         const timetableData = await timetableResponse.json();
 
         if (timetableData.errors) {
@@ -50,7 +55,6 @@ async function getTimetable() {
             return;
         }
 
-        // Store fetched data in calendarData
         calendarData = timetableData.data;
         localStorage.setItem('calendarData', JSON.stringify(calendarData));
         localStorage.setItem('loggedIn', 'true');
@@ -62,6 +66,8 @@ async function getTimetable() {
         showToastWithError('An unexpected error occurred while fetching the timetable: ' + error.message);
     }
 }
+
+
 
 function renderCalendar(data) {
     try {
@@ -188,4 +194,32 @@ function logout() {
 // Run checkLogin() on calendar page load
 if (window.location.pathname.includes('app')) {
     checkLogin();
+}
+
+function showToastWithError(errorMessage) {
+    const toast = document.getElementById('toast-warning');
+    const messageElement = document.getElementById('toast-message');
+    const closeButton = document.getElementById('toast-close');
+    
+    // Update the message
+    messageElement.textContent = `We encountered an error: ${errorMessage}`;
+    
+    // Show the toast
+    toast.classList.remove('hidden');
+    
+    // Hide the toast after 10 seconds
+    const hideToastTimeout = setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 10000); // 10 seconds
+    
+    // Event listener for the close button
+    closeButton.addEventListener('click', () => {
+        clearTimeout(hideToastTimeout); // Clear the timeout if user closes it early
+        toast.classList.add('hidden');
+    });
+}
+
+function handleLogin(event) {
+    event.preventDefault(); // Prevent the default form submission
+    getTimetable(); // Call your login function
 }

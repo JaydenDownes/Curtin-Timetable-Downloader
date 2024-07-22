@@ -119,14 +119,13 @@
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="flex items-center justify-between p-4 absolute top-0 w-full">
-		<div class="text-white font-bold text-xl ml-8">
-			Curtin Timetable
-		</div>
-		<div>
-			<a class="text-white mr-4" href="#">Home</a> <a class="text-white mr-4" href="#">Calendar</a> <a class="text-white mr-8" href="/" onclick="logout()">Logout</a>
-		</div>
-	</nav><!-- Header Section -->
+    <nav class="flex items-center justify-between p-12">
+        <div class="text-white font-bold text-xl">Curtin Timetable</div>
+        <div id="navbar">
+            <!-- Loaded by Javascript -->
+        </div>
+    </nav>
+    <!-- Header Section -->
 	<div class="header-section flex items-center px-4 md:px-8">
 		<div class="text-header max-w-2xl text-center">
 			<h1 class="text-4xl font-bold mb-4">University Calendar</h1><!-- <p class="text-lg">This is the subtext of the article that provides a brief introduction or summary.</p> -->
@@ -296,43 +295,39 @@
                 </svg>
             </button>
         </div>
-    
-    <script>
-        function showToastWithError(errorMessage) {
-            const toast = document.getElementById('toast-warning');
-            const messageElement = document.getElementById('toast-message');
-            const closeButton = document.getElementById('toast-close');
-            
-            // Update the message
-            messageElement.textContent = `We encountered an error: ${errorMessage}`;
-            
-            // Show the toast
-            toast.classList.remove('hidden');
-            
-            // Hide the toast after 10 seconds
-            const hideToastTimeout = setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 10000); // 10 seconds
-            
-            // Event listener for the close button
-            closeButton.addEventListener('click', () => {
-                clearTimeout(hideToastTimeout); // Clear the timeout if user closes it early
-                toast.classList.add('hidden');
-            });
-        }
-
-        // // Example usage
-        // try {
-        //     // Code that may throw an error
-        //     throw new Error("Something went wrong!");
-        // } catch (error) {
-        //     showToastWithError(error.message);
-        // }
-    </script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.js">
     </script>
+    <script>
+        // Function to update the navigation bar based on login status
+        function updateNavbar() {
+            const navBar = document.getElementById('navbar');
+            const loggedIn = localStorage.getItem('loggedIn') === 'true';
 
+            if (loggedIn) {
+                navBar.innerHTML = `
+                    <a href="#" class="text-white mr-4">Home</a>
+                    <a href="app" class="text-white mr-4">Calendar</a>
+                    <a href="#" class="text-white" onclick="logout()">Logout</a>
+                `;
+            } else {
+                navBar.innerHTML = `
+                    <a href="#" class="text-white mr-4">Home</a>
+                    <a href="/login" class="text-white mr-4">Login</a>
+                `;
+            }
+        }
+
+        // Check login status and update the navigation bar when the page loads
+        window.onload = function() {
+            updateNavbar();
+        };
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = '/login';
+        }
+    </script>
     <script defer src="static/app.js">
     </script>
 </body>
