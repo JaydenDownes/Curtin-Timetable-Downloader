@@ -1,7 +1,7 @@
 
 <p align="center">
   <a>
-    <img alt="Curtin University Timetable Downloader" title="Curtin University Timetable Downloader" src="https://i.imgur.com/zGHgMpO.png" width="350">
+    <img alt="Curtin University Timetable Downloader" title="Curtin University Timetable Downloader" src="https://i.imgur.com/zGHgMpO.png" href="https://curtin-timetable-downloader.pages.dev/" target="_blank" width="350">
   </a>
 </p>
 
@@ -9,13 +9,13 @@
 
 <br/>
 
-Welcome to the **unofficial** Curtin University Timetable Downloader! This web application allows users to fetch their timetables from Curtin University's Elsie Service and seamlessly integrate them into their favorite calendar applications such as Google Calendar, Outlook, Apple Calendar, iOS, and Android.
+Welcome to the **unofficial** [Curtin University Timetable Downloader](https://curtin-timetable-downloader.pages.dev/)! This web application allows users to fetch their timetables from Curtin University's Elsie Service and seamlessly integrate them into their favorite calendar applications such as Google Calendar, Outlook, Apple Calendar, iOS, and Android.
 
 <br>
 
 <p align="center">
   <a>
-    <img alt="Curtin University Timetable Downloader" title="Curtin University Timetable Downloader" src="https://i.imgur.com/aAaUa3s.png" width="900">
+    <img alt="Curtin University Timetable Downloader" title="Curtin University Timetable Downloader" src="https://i.imgur.com/aAaUa3s.png" href="https://curtin-timetable-downloader.pages.dev/" target="_blank" width="900">
   </a>
 </p>
 
