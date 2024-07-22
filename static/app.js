@@ -82,7 +82,7 @@ function renderCalendar(data) {
         titleEl.innerHTML = `<span>${monthName}</span> <span class="year">${year}</span>`;
 
         let calendarGrid = `
-            <div class="calendar-grid">
+            <div class="calendar-header-grid">
                 ${daysOfWeek.map(day => `<div class="calendar-day-header">${day}</div>`).join('')}
             </div>
             <div class="calendar-grid">`;
@@ -202,7 +202,7 @@ function showToastWithError(errorMessage) {
     const closeButton = document.getElementById('toast-close');
     
     // Update the message
-    messageElement.textContent = `We encountered an error: ${errorMessage}`;
+    messageElement.textContent = `${errorMessage}`;
     
     // Show the toast
     toast.classList.remove('hidden');

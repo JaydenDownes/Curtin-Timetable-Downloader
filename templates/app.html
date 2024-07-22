@@ -7,124 +7,143 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
     <link rel="manifest" href="static/favicons/site.webmanifest">
-	<style>
-	       body {
-	           font-family: 'Inter', sans-serif;
-	           color: rgb(39, 39, 42);
-	       }
-	       .header-section {
-	           background-color: rgb(39, 39, 42);
-	           color: white;
-	           height: 35vh;
-	       }
-           .navbar-section {
-	           background-color: rgb(39, 39, 42);
-	           color: white;
-	       }
-	       .overlap {
-	           margin-top: -100px;
-	           padding-top: 50px;
-	           border-top-left-radius: 5px;
-	           border-top-right-radius: 5px;
-	           width: 55%;
-	           margin-left: auto;
-	           margin-right: auto;
-	       }
-	       .text-header {
-	           width: 55%;
-	           margin-left: auto;
-	           margin-right: auto;
-	       }
-	       body {
-	           font-family: 'Lato', sans-serif;
-	       }
-	       .calendar-grid {
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: rgb(39, 39, 42);
+        }
+        .header-section {
+            background-color: rgb(39, 39, 42);
+            color: white;
+            height: 16vh;
+        }
+        .calendar-section {
+            color: white;
+            height: calc(100vh - 124px - 32px - 190px);
+        }
+        .bg-custom {
+            background-color: rgb(39, 39, 42);
+            color: white;
+        }
+        .overlap {
+            margin-top: -100px;
+            padding-top: 50px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 55%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .text-header {
+            width: 55%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .calendar-header-grid {
 	           display: grid;
 	           grid-template-columns: repeat(7, 1fr);
 	           gap: 2px;
 	       }
-	       .calendar-day {
-	           background-color: #ffffff;
-	           min-height: 100px;
-	           padding: 8px;
-	           position: relative;
-	       }
-	       .calendar-day-header {
-	           font-weight: 400;
-	           font-size: 12px;
-	           line-height: 1.25;
-	           text-align: center;
-	           background-color: #ffffff;
-	           padding: 4px 0;
-	           color: #000000;
-	       }
-	       .calendar-day-number {
-	           display: flex;
-	           align-items: center;
-	           justify-content: center;
-	           font-weight: 400;
-	           font-size: 10px;
-	           color: #000000;
-	       }
-	       .calendar-day.current .calendar-day-number {
-	           background-color: black;
-	           color: white;
-	           display: flex;
-	           align-items: center;
-	           justify-content: center;
-	           width: 18px;
-	           height: 18px;
-	           line-height: 1;
-	           border-radius: 50%;
-	       }
-	       .calendar-event {
-	           font-size: 8px;
-	           color: #000000;
-	           line-height: 1.25;
-	           padding: 2px 4px;
-	           border-radius: 4px;
-	           margin-top: 4px;
-	       }
-	       .calendar-event.bg1 { background-color: #FEE6C9; }
-	       .calendar-event.bg2 { background-color: #FFD9D9; }
-	       .calendar-event.bg3 { background-color: #D2F0FF; }
-	       .calendar-event.bg4 { background-color: #EBEFF0; }
-	       .calendar-title {
-	           font-size: 28px;
-	           line-height: 1.25;
-	           font-weight: 700;
-	           color: #000000;
-	       }
-	       .calendar-title .year {
-	           font-weight: 300;
-	       }
-	       .month-navigation {
-	           display: flex;
-	           justify-content: flex-end;
-	           align-items: center;
-	           margin-top: 0.5rem;
-	           font-size: 28px;
-	           color: #000000;
-	       }
-	       .month-navigation button {
-	           background: none;
-	           border: none;
-	           cursor: pointer;
-	           font-family: 'Lato', sans-serif;
-	           font-weight: 700;
-	           margin-left: 0.5rem;
-	       }
-	</style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            grid-template-rows: repeat(5, 1fr);
+            height: 60vh; /* Adjust the overall height as needed */
+            font-weight: 800;
+        }
+        .calendar-day {
+            background-color: #ffffff;
+            height: 100%; /* Use 100% of the grid row height */
+            padding: 8px;
+            position: relative;
+        }
+        .calendar-day-header {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.25;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 4px 0;
+            color: #000000;
+        }
+        .calendar-day-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 10px;
+            color: #000000;
+        }
+        .calendar-day.current .calendar-day-number {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            line-height: 1;
+            border-radius: 50%;
+        }
+        .calendar-event {
+            font-size: 8px;
+            color: #000000;
+            line-height: 1.75;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+        .calendar-event.bg1 { background-color: #FEE6C9; }
+        .calendar-event.bg2 { background-color: #FFD9D9; }
+        .calendar-event.bg3 { background-color: #D2F0FF; }
+        .calendar-event.bg4 { background-color: #EBEFF0; }
+        .calendar-title {
+            font-size: 28px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: rgb(217 217 217);
+        }
+        .calendar-title .year {
+            font-weight: 100;
+            margin-left:5px;
+        }
+        .month-navigation {
+            display: flex;
+            /* justify-content: flex-end;
+            align-items: center; */
+            /* margin-top: 0.5rem; */
+            font-size: 28px;
+            color: #000000;
+        }
+        .month-navigation button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .calendar-title {
+            flex-grow: 1;
+        }
+        .month-navigation {
+            flex-shrink: 0;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-custom">
 	<!-- Navbar -->
-    <nav class="flex items-center justify-between p-4 absolute top-0 w-full navbar-section">
-        <div class="text-white font-bold text-xl">Curtin Timetable</div>
+    <nav class="flex items-center justify-between p-12">
+        <div class="text-white font-bold text-xl ml-4">Curtin Timetable</div>
         <div id="navbar">
             <!-- Loaded by Javascript -->
         </div>
@@ -132,10 +151,10 @@
     <!-- Header Section -->
 	<div class="header-section flex items-center px-4 md:px-8">
 		<div class="text-header max-w-2xl text-center">
-			<h1 class="text-4xl font-bold mb-4">University Calendar</h1><!-- <p class="text-lg">This is the subtext of the article that provides a brief introduction or summary.</p> -->
+			<h1 class="text-4xl font-bold mb-4">University Calendar</h1>
 			<div class="flex justify-center space-x-4 mb-24">
-				<button id="downloadButton"  onclick="downloadCalendar()" class="bg-white text-gray-900 px-4 py-2 rounded">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to..  <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
-				<path d="m1 1 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button> <!-- Dropdown menu -->
+				<button id="downloadButton"  onclick="downloadCalendar()" class="bg-white text-gray-900 px-4 py-2 rounded">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to..  <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3 ml-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+				<path d="m1 1 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
 				<div class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700" id="dropdownHover">
 					<ul aria-labelledby="dropdownHoverButton" class="py-2 text-sm text-gray-700 dark:text-gray-200">
 						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="google-modal" data-modal-toggle="google-modal">Google calendar</button></li>
@@ -144,32 +163,42 @@
 						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="ios-modal" data-modal-toggle="ios-modal">iOS</button></li>
 						<li><button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-target="android-modal" data-modal-toggle="android-modal">Android</button></li>
 					</ul>
-				</div><!-- <button data-modal-target="medium-modal" data-modal-toggle="medium-modal"  class="bg-gray-900 text-white px-4 py-2 rounded flex items-center">
-                    Export to..
-                </button> -->
+				</div>
 			</div>
 		</div>
-	</div><!-- Article Section -->
-	<div class="bg-white py-8 px-4 md:px-8 overlap shadow-md">
+	</div>
+    
+	<div class="pb-8 px-8 md:px-8">
 		<!-- <button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button> -->
-		<div class="bg-white" id="calendar-container">
-			<div class="calendar-title mb-4" id="calendar-title"></div>
-			<div class="month-navigation">
-				<button onclick="prevMonth()">&lt;</button> <button onclick="nextMonth()">&gt;</button>
-			</div>
+		<div class="bg-white w-50 shadow-md rounded p-8 calendar-section" id="calendar-container">
+            <div class="calendar-header">
+                <div class="calendar-title mb-8" id="calendar-title">Loading.. </div>
+                <div class="month-navigation mb-8">
+                    <a onclick="prevMonth()">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+                          </svg>                          
+                    </a>
+                    <a onclick="nextMonth()">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                          </svg>                          
+                    </a>
+                </div>
+            </div>            
 			<div id="calendar"></div>
 		</div>
 	</div><!-- google-modal -->
-	<div class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full" id="google-modal" tabindex="-1">
+	<div class="fixed top-0 left-0 right-0 z-50 hidden w-100 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100vh - 124px)] max-h-full" id="google-modal" tabindex="-1" aria-hidden="true" >
 		<div class="relative w-full max-w-lg max-h-full">
 			<!-- Modal content -->
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<!-- Modal header -->
 				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Google Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Google Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="google-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
 					<path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> <span class="sr-only">Close modal</span></button>
 				</div><!-- Modal body -->
-				<div class="modal-body px-4 py-2 text-sm text-gray-700 dark:text-gray-300">
+				<div class="modal-body px-4 py-6 text-sm text-gray-700 dark:text-gray-300">
 					<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
 						<li>In your browser, open <a href="https://calendar.google.com" target="_blank">Google Calendar</a>.
 						</li>
@@ -181,7 +210,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-modal-hide="medium-modal" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-modal-hide="medium-modal" type="button">Open Google calendar</button>
+					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">Open Google calendar</button>
 				</div>
 			</div>
 		</div>
@@ -192,10 +221,10 @@
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<!-- Modal header -->
 				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Outlook Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Outlook Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="outlook-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
 					<path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> <span class="sr-only">Close modal</span></button>
 				</div><!-- Modal body -->
-				<div class="modal-body px-4 py-2 text-sm text-gray-700 dark:text-gray-300">
+				<div class="modal-body px-4 py-6 text-sm text-gray-700 dark:text-gray-300">
 					<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
 						<li>Open Outlook on your desktop.</li>
 						<li>Go to the <strong>File</strong> menu.</li>
@@ -207,7 +236,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-modal-hide="medium-modal" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-modal-hide="medium-modal" type="button">Open Outlook</button>
+					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">Open Outlook</button>
 				</div>
 			</div>
 		</div>
@@ -218,10 +247,10 @@
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<!-- Modal header -->
 				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Apple Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Apple Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="apple-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
 					<path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> <span class="sr-only">Close modal</span></button>
 				</div><!-- Modal body -->
-				<div class="modal-body px-4 py-2 text-sm text-gray-700 dark:text-gray-300">
+				<div class="modal-body px-4 py-6 text-sm text-gray-700 dark:text-gray-300">
 					<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
 						<li>Open Calendar on your Mac.</li>
 						<li>From the <strong>File</strong> menu, choose <strong>Import</strong>.</li>
@@ -229,7 +258,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-modal-hide="medium-modal" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-modal-hide="medium-modal" type="button">Open Apple calendar</button>
+					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">Open Apple calendar</button>
 				</div>
 			</div>
 		</div>
@@ -240,10 +269,10 @@
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<!-- Modal header -->
 				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-xl font-medium text-gray-900 dark:text-white">iOS Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+					<h3 class="text-xl font-medium text-gray-900 dark:text-white">iOS Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="ios-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
 					<path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> <span class="sr-only">Close modal</span></button>
 				</div><!-- Modal body -->
-				<div class="modal-body px-4 py-2 text-sm text-gray-700 dark:text-gray-300">
+				<div class="modal-body px-4 py-6 text-sm text-gray-700 dark:text-gray-300">
 					<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
 						<li>Download the .ics file to your device.</li>
 						<li>Open the <strong>Mail</strong> app or the <strong>Files</strong> app.</li>
@@ -252,7 +281,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-modal-hide="medium-modal" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-modal-hide="medium-modal" type="button">Open iOS calendar</button>
+					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">Open iOS calendar</button>
 				</div>
 			</div>
 		</div>
@@ -263,10 +292,10 @@
 			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 				<!-- Modal header -->
 				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Android Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+					<h3 class="text-xl font-medium text-gray-900 dark:text-white">Android Calendar Instructions</h3><button class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="android-modal" type="button"><svg aria-hidden="true" class="w-3 h-3" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
 					<path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> <span class="sr-only">Close modal</span></button>
 				</div><!-- Modal body -->
-				<div class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
+				<div class="modal-body px-4 py-6 text-sm text-gray-700 dark:text-gray-300">
 					<ol class="max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
 						<li>Download the .ics file to your device.</li>
 						<li>Open the <strong>Google Calendar</strong> app on your Android device.</li>
@@ -277,7 +306,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-modal-hide="medium-modal" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-modal-hide="medium-modal" type="button">Open Android calendar</button>
+					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <button class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">Open Android calendar</button>
 				</div>
 			</div>
 		</div>
@@ -334,5 +363,6 @@
     </script>
     <script defer src="static/app.js">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 </body>
 </html>
