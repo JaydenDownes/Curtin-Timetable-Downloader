@@ -122,8 +122,14 @@
             localStorage.removeItem('loggedIn');
             window.location.href = '/login';
         }
+
+        function handleLogin(event) { // Duplicate code use to prevent passwords being visible in URL if browser fails to fetch app.js
+            event.preventDefault(); // Prevent the default form submission
+            getTimetable(); // Call your login function
+        }
     </script>
-    <script src="app.js"></script>
+    
+    <script src="static/app.js"></script>
     <script src="static/dependancies/flowbite/flowbite.min.js"></script>
 </body>
 </html>
