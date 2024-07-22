@@ -154,7 +154,7 @@
 		<div class="text-header max-w-2xl text-center">
 			<h1 class="text-4xl font-bold mb-4">University Calendar</h1>
 			<div class="flex justify-center space-x-4 mb-24">
-				<button id="downloadButton"  onclick="downloadCalendar()" class="bg-white text-gray-900 px-4 py-2 rounded">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to..  <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3 ml-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+				<button class="bg-white text-gray-900 px-4 py-2 rounded download-btn">Download iCalendar .ics</button> <button class="bg-gray-900 text-white px-4 py-2 rounded flex items-center" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" id="dropdownHoverButton" type="button">Export to..  <svg aria-hidden="true" class="w-2.5 h-2.5 ms-3 ml-3" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
 				<path d="m1 1 4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
 				<div class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700" id="dropdownHover">
 					<ul aria-labelledby="dropdownHoverButton" class="py-2 text-sm text-gray-700 dark:text-gray-200">
@@ -170,7 +170,6 @@
 	</div>
     
 	<div class="pb-8 px-8 md:px-8">
-		<!-- <button class="bg-blue-500 text-white py-2 px-4 rounded" onclick="getTimetable()">Get Timetable</button> <button class="bg-green-500 text-white py-2 px-4 rounded mt-4" id="downloadButton" style="display:none;">Download Calendar</button> -->
 		<div class="bg-white w-50 shadow-md rounded p-8 calendar-section" id="calendar-container">
             <div class="calendar-header">
                 <div class="calendar-title mb-8" id="calendar-title">Loading.. </div>
@@ -211,7 +210,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://calendar.google.com/" target="_blank">Open Google calendar</a>
+					<button class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 download-btn" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://calendar.google.com/" target="_blank">Open Google calendar</a>
 				</div>
 			</div>
 		</div>
@@ -237,7 +236,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://outlook.live.com/" target="_blank">Open Outlook</a>
+					<button class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 download-btn" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://outlook.live.com/" target="_blank">Open Outlook</a>
 				</div>
 			</div>
 		</div>
@@ -259,7 +258,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://www.icloud.com/" target="_blank">Open Apple calendar</a>
+					<button class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 download-btn"  type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="https://www.icloud.com/" target="_blank">Open Apple calendar</a>
 				</div>
 			</div>
 		</div>
@@ -282,7 +281,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="calshow://">Open iOS calendar</a>
+					<button class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 download-btn" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="calshow://">Open iOS calendar</a>
 				</div>
 			</div>
 		</div>
@@ -307,7 +306,7 @@
 					</ol>
 				</div><!-- Modal footer -->
 				<div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-					<button onclick="downloadCalendar()" class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="intent://calendar/#Intent;scheme=content;package=com.android.calendar;end">Open Android calendar</a>
+					<button class="text-white bg-gray-800 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 download-btn" type="button">Download .ics file</button> <a class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" href="intent://calendar/#Intent;scheme=content;package=com.android.calendar;end">Open Android calendar</a>
 				</div>
 			</div>
 		</div>

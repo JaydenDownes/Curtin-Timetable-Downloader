@@ -120,17 +120,68 @@ function renderCalendar(data) {
     }
 }
 
-function downloadCalendar(user, token) {
+document.querySelectorAll('.download-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        downloadCalendar();
+    });
+});
+
+async function downloadCalendar() {
     try {
-        const link = document.createElement('a');
-        link.href = `https://curtin-timetable.scsa.workers.dev/?https://elsie.curtin.edu.au/api/calendar.ics?user=${user}&token=${token}`;
-        link.download = 'calendar.ics';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        const url = `https://curtin-timetable.scsa.workers.dev/?https://elsie.curtin.edu.au/api/students/${user}/study-activities`;
+        const userAgent = navigator.userAgent;
+        const correlationId = generateUUID();
+
+        // Fetch activities
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'User-Agent': userAgent,
+                'X-Correlation-ID': correlationId
+            }
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const data = await response.json();
+        const activities = data.data || [];
+
+        // Create iCalendar data
+        let calendar = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Sample Corp//NONSGML Event//EN\n';
+
+        activities.forEach(activity => {
+            calendar += 'BEGIN:VEVENT\n';
+            calendar += `DTSTART:${formatDateTime(activity.startDateTime)}\n`;
+            calendar += `DTEND:${formatDateTime(activity.endDateTime)}\n`;
+            calendar += `SUMMARY:${activity.unit.unitCode} ${activity.unit.abbreviatedTitle} ${activity.activityType}\n`;
+            calendar += `LOCATION:${activity.location.buildingNumber}.${activity.location.roomNumber} (${activity.location.name})\n`;
+            calendar += 'END:VEVENT\n';
+        });
+
+        calendar += 'END:VCALENDAR';
+
+        // Create a Blob from the iCalendar data
+        const blob = new Blob([calendar], { type: 'text/calendar' });
+        const urlBlob = URL.createObjectURL(blob);
+
+        // Create a link element for download
+        const a = document.createElement('a');
+        a.href = urlBlob;
+        a.download = 'calendar.ics';
+        a.click();
+
+        // Clean up
+        URL.revokeObjectURL(urlBlob);
     } catch (error) {
-        showToastWithError('An unexpected error occurred while downloading the calendar: ' + error.message);
+        console.error('Error downloading calendar:', error);
     }
+}
+
+function formatDateTime(dateTime) {
+    const date = new Date(dateTime);
+    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'; // Format: 20240722T123000Z
 }
 
 function generateUUID() {
