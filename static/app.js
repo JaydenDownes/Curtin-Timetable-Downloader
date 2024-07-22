@@ -185,7 +185,7 @@ async function downloadCalendar() {
 
         URL.revokeObjectURL(urlBlob);
     } catch (error) {
-        console.error('Error downloading calendar:', error);
+        showToastWithError('Error downloading calendar: ' + error.message);
     }
 }
 
